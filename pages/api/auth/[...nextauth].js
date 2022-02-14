@@ -1,10 +1,10 @@
 import NextAuth from "next-auth"
 
-
-
 export default NextAuth({
 
     providers: [
+
+        // hazelbase provider
 
         {
             id: 'hazelbase',
@@ -18,7 +18,7 @@ export default NextAuth({
             profileUrl: 'https://api.hazelbase.com/oidc/me',
             scope: 'openid profile name email',
             protection: 'pkce',
-            clientId: '8443bddf-21cd-470e-a568-ffbed4d37446',
+            clientId: process.env.HAZELBASE_CLIENT_ID,
             params: {
                 grant_type: 'authorization_code',
             },
@@ -29,5 +29,6 @@ export default NextAuth({
                 };
             },
         }
+
     ]
 })

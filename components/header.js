@@ -1,9 +1,10 @@
 import { LocalStateContext } from "../contexts/localStateProvider"
 import { useContext } from "react"
+//import { useSession } from "next-auth/react"
 
 export default function Header() {
 
-    const [, dispatch] = useContext(LocalStateContext)
+    const [, dispatch] = useContext(LocalStateContext);
     return <header className="flex justify-between px-8 py-4 bg-gray-100 shadow-inner">
         <div>
             <h1 className="text-xl text-twitter font-extrabold">TweetJOBS</h1>

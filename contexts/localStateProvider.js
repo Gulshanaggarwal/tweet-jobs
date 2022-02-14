@@ -5,7 +5,8 @@ import { createContext, useReducer } from "react";
 export const LocalStateContext = createContext();
 
 const initialState = {
-    loginWindow: null
+    loginWindow: null,
+    searchValue: ""
 }
 
 
@@ -14,6 +15,10 @@ const reducer = (state, action) => {
         case "showLogin":
             return {
                 loginWindow: action.payload
+            }
+        case "handleSearchValue":
+            return {
+                searchValue: action.payload
             }
     }
 }

@@ -10,6 +10,12 @@ module.exports = {
       },
       backgroundColor: {
         "black-transparent": "rgba(0,0,0,0.4)"
+      },
+      borderWidth: {
+        '1': "1px"
+      },
+      width: {
+        '95P': "95%"
       }
     },
   },
