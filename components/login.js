@@ -6,7 +6,7 @@ export default function Login() {
 
     const [, dispatch] = useContext(LocalStateContext);
     const { data: session } = useSession();
-    console.log("sess", session);
+    console.log("sessio", session);
 
     return (
         <div className="fixed top-0 left-0 w-full py-20 bg-black-transparent h-full">
