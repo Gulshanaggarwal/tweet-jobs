@@ -8,6 +8,8 @@ const footer = () => {
                 <a> <p className=' font-bold text-2xl text-center text-stone-50' >TweetJOBS</p> </a>
             </Link>
             <br />
+            {/* <Image src='/icons8-github-48.png' width={30} height={30} /> */}
+            <br />
             <div className='p-0 text-center text-stone-50' >
                 Made with 🧡 by <a href='https://twitter.com/gulshanagg333'>Gulshan</a> and <a href='https://twitter.com/ishanjain_'>Ishan</a>
             </div>

@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { useQuery } from "react-query";
-import Footer from '../components/footer';
 import Header from "../components/header";
 import Login from "../components/login";
 import SearchBox from "../components/searchBox";
@@ -20,7 +19,6 @@ export default function Home() {
       {state.loginWindow && <Login />}
       {isLoading && <p className="text-center py-4 text-2xl">Loading....</p>}
       {result && result.status === "ok" && result.data.length > 0 && <TweetBox data={result.data} />}
-      <Footer />
     </div>
   )
 }

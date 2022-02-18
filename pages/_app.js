@@ -1,9 +1,9 @@
-import '../styles/globals.css'
-import 'react-static-tweets/styles.css'
-import LocalContextProvider from '../contexts/localStateProvider'
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { ReactQueryDevtools } from "react-query/devtools"
 import { SessionProvider } from "next-auth/react"
+import { QueryClient, QueryClientProvider } from 'react-query'
+import 'react-static-tweets/styles.css'
+import Footer from '../components/footer'
+import LocalContextProvider from '../contexts/localStateProvider'
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 
@@ -15,6 +15,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         <Component {...pageProps} />
       </LocalContextProvider>
     </QueryClientProvider>
+    <Footer />
   </SessionProvider>
 }
 
