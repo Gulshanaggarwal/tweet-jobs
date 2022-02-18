@@ -1,11 +1,12 @@
-import '../styles/globals.css'
-import 'react-static-tweets/styles.css'
-import LocalContextProvider from '../contexts/localStateProvider'
-import { QueryClient, QueryClientProvider } from 'react-query'
 import { SessionProvider } from "next-auth/react"
+import { QueryClient, QueryClientProvider } from 'react-query'
+import 'react-static-tweets/styles.css'
+import Footer from '../components/footer'
 import Header from '../components/header'
-import ScrollToTop from '../components/scrollToTop'
 import Login from '../components/login'
+import ScrollToTop from '../components/scrollToTop'
+import LocalContextProvider from '../contexts/localStateProvider'
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         <ScrollToTop />
       </LocalContextProvider>
     </QueryClientProvider>
+    <Footer />
   </SessionProvider>
 }
 
