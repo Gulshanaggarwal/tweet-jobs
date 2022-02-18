@@ -18,10 +18,6 @@ export default NextAuth({
             profileUrl: 'https://api.hazelbase.com/oidc/me',
             scope: 'openid profile name email',
             protection: 'pkce',
-            pkce: {
-                required: true
-            },
-            token_endpoint_auth_method: "none",
             clientId: process.env.HAZELBASE_CLIENT_ID,
             params: {
                 grant_type: 'authorization_code',
