@@ -17,12 +17,13 @@ const FetchTweets = async (req, res) => {
     })
 
     const data = await response.json();
-    const getIDS = [];
-    data.statuses.forEach((ele) => getIDS.push({ id: ele.id_str, tweet_URL: `https://twitter.com/${ele.user.screen_name}/status/${ele.id_str}` }))
+    const tweetData = [];
+    data.statuses.forEach((ele) => tweetData.push({ id: ele.id_str, tweet_URL: `https://twitter.com/${ele.user.screen_name}/status/${ele.id_str}`, text: ele.full_text }))
+    const uniqueTweetData = [...new Set(tweetData)];
 
 
 
-    res.status(200).json({ status: "ok", data: getIDS })
+    res.status(200).json({ status: "ok", data: uniqueTweetData })
 }
 
 export default FetchTweets

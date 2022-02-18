@@ -2,8 +2,10 @@ import '../styles/globals.css'
 import 'react-static-tweets/styles.css'
 import LocalContextProvider from '../contexts/localStateProvider'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { ReactQueryDevtools } from "react-query/devtools"
 import { SessionProvider } from "next-auth/react"
+import Header from '../components/header'
+import ScrollToTop from '../components/scrollToTop'
+import Login from '../components/login'
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 
@@ -12,7 +14,10 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return <SessionProvider session={session}>
     <QueryClientProvider client={queryClient}>
       <LocalContextProvider>
+        <Header />
+        <Login />
         <Component {...pageProps} />
+        <ScrollToTop />
       </LocalContextProvider>
     </QueryClientProvider>
   </SessionProvider>
