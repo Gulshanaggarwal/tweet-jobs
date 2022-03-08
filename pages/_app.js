@@ -6,6 +6,7 @@ import { SessionProvider } from "next-auth/react"
 import Header from '../components/header'
 import ScrollToTop from '../components/scrollToTop'
 import Login from '../components/login'
+import Footer from '../components/footer'
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
 
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         <ScrollToTop />
       </LocalContextProvider>
     </QueryClientProvider>
+  <Footer/>
   </SessionProvider>
 }
 
